@@ -1,4 +1,4 @@
-# 7aRepo
+# ProgOblig03
 
 Kode for ProgOblig03
 
