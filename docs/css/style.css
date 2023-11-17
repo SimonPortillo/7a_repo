@@ -280,3 +280,42 @@ a {
         float: none;
     }
 }
+
+/* Responsive grid CSS Code here will only be executed on a screen with a width below 600px */
+@media screen and (max-width: 720px) {
+    .parent {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(7, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+    }
+
+    .div1 {
+        grid-area: 1 / 1 / auto / 4;
+    }
+
+    .div2 {
+        grid-area: 2 / 1 / auto / 4;
+    }
+
+    .div3 {
+        grid-area: 3 / 1 / auto / 4;
+    }
+
+    .div4 {
+        grid-area: 4 / 1 / auto / 4;
+    }
+
+    .div5 {
+        grid-area: 5 / 1 / auto / 4;
+    }
+
+    .div6 {
+        grid-area: 6 / 1 / auto / 5;
+    }
+
+    .div7 {
+        grid-area: 7 / 1 / auto / 5;
+    }
+}
