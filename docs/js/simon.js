@@ -133,6 +133,7 @@ var canvas = document.getElementById("axelCanvas");
 var ctx = canvas.getContext("2d");
 rectangle(50, 50, "solid", "green");
 
+
 var canvas = document.getElementById("livCanvas");
 var ctx = canvas.getContext("2d");
 circle(40, "outline", "red");
