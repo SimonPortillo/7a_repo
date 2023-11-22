@@ -84,42 +84,51 @@ function overlayXY(img1, x, y, img2){
     return img2;
 }
 
-var canvas = document.getElementById("simonCanvas");
-var ctx = canvas.getContext("2d");
-const centerX = canvas.width / 2;
-const centerY = canvas.height / 2;
-    overlayxy(ctx, centerX - 20, centerY - 20, rectangle(40, 40, "solid", "blue"));
-    overlayxy(ctx, centerX - 15, centerY - 15, rectangle(30, 30, "solid", "red"));
-    overlayxy(ctx, centerX - 10, centerY - 10, rectangle(20, 20, "solid", "black"));
-    overlayxy(ctx, centerX - 5, centerY - 5, rectangle(10, 10, "solid", "white"));
-    overlayxy(ctx, centerX - 42, centerY - 42, circle(40, "outline", "red"));
-    overlayxy(ctx, centerX -37, centerY - 37, circle(35, "outline", "blue"));
-    overlayxy(ctx, centerX - 32, centerY - 32, circle(30, "outline", "red"));
-
-/*
-var canvas = document.getElementById("axelCanvas");
-var ctx = canvas.getContext("2d");
-rectangle(50, 50, "solid", "green");
-
-var canvas = document.getElementById("livCanvas");
-var ctx = canvas.getContext("2d");
-circle(40, "outline", "red");
-
-var canvas = document.getElementById("birkCanvas");
-var ctx = canvas.getContext("2d");
-circle(40, "outline", "red");
-
-var canvas = document.getElementById("siriCanvas");
-var ctx = canvas.getContext("2d");
-circle(40, "outline", "red");
-
+//Simens figur Canvas
 var canvas = document.getElementById("simenCanvas");
-var ctx = canvas.getContext("2d");
-circle(40, "outline", "red");
+var centerX = canvas.width/2;
+var centerY = canvas.height/2; 
 
-var canvas = document.getElementById("stormCanvas");
-var ctx = canvas.getContext("2d");
-circle(40, "outline", "red");
-*/
+const bakgrunn = rectangle(200,200,"solid","maroon")
+const bakgrunn2 = rectangle(220, 220, "solid", "blue")
+const linje1 = rectangle(80, 25, "solid", "green")
+const linje2 = rectangle(25, 80, "solid", "green")
+const linje3 = rectangle(90, 35, "solid", "pink")
+const linje4 = rectangle(35, 90, "solid", "pink")
 
-    
+
+overlayXY(bakgrunn, 10, 10, bakgrunn2);
+overlayXY(linje3, 60, 15, bakgrunn2);
+overlayXY(linje4, 60, 35, bakgrunn2);
+overlayXY(linje3, 60, 95, bakgrunn2);
+overlayXY(linje4, 115, 105, bakgrunn2);
+overlayXY(linje3, 60, 165, bakgrunn2);
+overlayXY(linje1, 65, 20, bakgrunn2);
+overlayXY(linje2, 65, 40, bakgrunn2);
+overlayXY(linje1, 65, 100, bakgrunn2);
+overlayXY(linje2, 120, 110, bakgrunn2);
+overlayXY(linje1, 65, 170, bakgrunn2);
+overlayXY(bakgrunn2, centerX - (bakgrunn2.width/2), centerY - (bakgrunn2.height/2), canvas);
+
+//Simens figur SVG
+var svg = document.getElementById("simenSVG");
+var bakgrunnSVG = rectangleSVG(200,200,"solid","maroon")
+var bakgrunn2SVG = rectangleSVG(220, 220, "solid", "blue")
+var linje1SVG = rectangleSVG(80, 25, "solid", "green")
+var linje2SVG = rectangleSVG(25, 80, "solid", "green")
+var linje3SVG = rectangleSVG(90, 35, "solid", "pink")
+var linje4SVG = rectangleSVG(35, 90, "solid", "pink")
+
+
+overlayXYsvg(bakgrunn2SVG, 0, 0, svg);
+overlayXYsvg(bakgrunnSVG, 10, 10, svg);
+overlayXYsvg(linje3SVG.cloneNode(true), 60, 15, svg);
+overlayXYsvg(linje4SVG.cloneNode(true), 60, 35, svg);
+overlayXYsvg(linje3SVG.cloneNode(true), 60, 95, svg);
+overlayXYsvg(linje4SVG, 115, 105, svg);
+overlayXYsvg(linje3SVG, 60, 165, svg);
+overlayXYsvg(linje1SVG.cloneNode(true), 65, 20, svg);
+overlayXYsvg(linje2SVG.cloneNode(true), 65, 40, svg);
+overlayXYsvg(linje1SVG.cloneNode(true), 65, 100, svg);
+overlayXYsvg(linje2SVG, 120, 110, svg);
+overlayXYsvg(linje1SVG, 65, 170, svg);

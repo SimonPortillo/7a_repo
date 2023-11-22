@@ -84,42 +84,31 @@ function overlayXY(img1, x, y, img2){
     return img2;
 }
 
-var canvas = document.getElementById("simonCanvas");
-var ctx = canvas.getContext("2d");
-const centerX = canvas.width / 2;
-const centerY = canvas.height / 2;
-    overlayxy(ctx, centerX - 20, centerY - 20, rectangle(40, 40, "solid", "blue"));
-    overlayxy(ctx, centerX - 15, centerY - 15, rectangle(30, 30, "solid", "red"));
-    overlayxy(ctx, centerX - 10, centerY - 10, rectangle(20, 20, "solid", "black"));
-    overlayxy(ctx, centerX - 5, centerY - 5, rectangle(10, 10, "solid", "white"));
-    overlayxy(ctx, centerX - 42, centerY - 42, circle(40, "outline", "red"));
-    overlayxy(ctx, centerX -37, centerY - 37, circle(35, "outline", "blue"));
-    overlayxy(ctx, centerX - 32, centerY - 32, circle(30, "outline", "red"));
+//Siris FIgur Canvas
+canvas = document.getElementById("siriCanvas");
+overlayXY(circle(30, "solid", "lemonChiffon"), 120, 130,
+  overlayXY(circle(60, "solid", "plum"), 50, 140,
+    overlayXY(circle(60, "solid", "plum"), 40, 85,
+      overlayXY(circle(60, "solid", "plum"), 125, 140,
+        overlayXY(circle(60, "solid", "plum"), 140, 90,
+          overlayXY(circle(60, "solid", "plum"), 100, 50,
+            overlayXY(circle(90, "solid", "mediumOrchid"), 130, 50,
+              overlayXY(circle(90, "solid", "mediumOrchid"), 60, 0,
+                overlayXY(circle(90, "solid", "mediumOrchid"), 5, 50,
+                  overlayXY(circle( 90, "solid", "mediumOrchid"), 10, 125,
+                    overlayXY(circle(90, "solid", "mediumOrchid"), 100, 125, canvas)))))))))));
 
-/*
-var canvas = document.getElementById("axelCanvas");
-var ctx = canvas.getContext("2d");
-rectangle(50, 50, "solid", "green");
+//SIris Figur SVG
+svg = document.getElementById("siriSVG");
+overlayXYsvg(circleSVG(30, "solid", "lemonChiffon"), 150, 160,
+  overlayXYsvg(circleSVG(60, "solid", "plum"), 110, 200,
+    overlayXYsvg(circleSVG(60, "solid", "plum"), 100, 145,
+      overlayXYsvg(circleSVG(60, "solid", "plum"), 185, 200,
+        overlayXYsvg(circleSVG(60, "solid", "plum"), 200, 150,
+          overlayXYsvg(circleSVG(60, "solid", "plum"), 160, 110,
+            overlayXYsvg(circleSVG(90, "solid", "mediumOrchid"), 220, 140,
+              overlayXYsvg(circleSVG(90, "solid", "mediumOrchid"), 160, 90,
+                overlayXYsvg(circleSVG(90, "solid", "mediumOrchid"), 95, 140,
+                  overlayXYsvg(circleSVG( 90, "solid", "mediumOrchid"), 100, 215,
+                    overlayXYsvg(circleSVG(90, "solid", "mediumOrchid"), 190, 215, svg)))))))))));
 
-var canvas = document.getElementById("livCanvas");
-var ctx = canvas.getContext("2d");
-circle(40, "outline", "red");
-
-var canvas = document.getElementById("birkCanvas");
-var ctx = canvas.getContext("2d");
-circle(40, "outline", "red");
-
-var canvas = document.getElementById("siriCanvas");
-var ctx = canvas.getContext("2d");
-circle(40, "outline", "red");
-
-var canvas = document.getElementById("simenCanvas");
-var ctx = canvas.getContext("2d");
-circle(40, "outline", "red");
-
-var canvas = document.getElementById("stormCanvas");
-var ctx = canvas.getContext("2d");
-circle(40, "outline", "red");
-*/
-
-    

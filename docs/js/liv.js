@@ -84,42 +84,34 @@ function overlayXY(img1, x, y, img2){
     return img2;
 }
 
-var canvas = document.getElementById("simonCanvas");
-var ctx = canvas.getContext("2d");
-const centerX = canvas.width / 2;
-const centerY = canvas.height / 2;
-    overlayxy(ctx, centerX - 20, centerY - 20, rectangle(40, 40, "solid", "blue"));
-    overlayxy(ctx, centerX - 15, centerY - 15, rectangle(30, 30, "solid", "red"));
-    overlayxy(ctx, centerX - 10, centerY - 10, rectangle(20, 20, "solid", "black"));
-    overlayxy(ctx, centerX - 5, centerY - 5, rectangle(10, 10, "solid", "white"));
-    overlayxy(ctx, centerX - 42, centerY - 42, circle(40, "outline", "red"));
-    overlayxy(ctx, centerX -37, centerY - 37, circle(35, "outline", "blue"));
-    overlayxy(ctx, centerX - 32, centerY - 32, circle(30, "outline", "red"));
+//Livs Figur Canvas
+canvas = document.getElementById("livCanvas");
+const outline = circle(101, "outline", "black")
+const back = circle(100, "solid", "yellow")
+const whiteCircle = circle(25, "solid", "white")
+const pupil = circle(16, "solid", "black")
+const mouth = rectangle(70, 5, "solid", "black")
 
-/*
-var canvas = document.getElementById("axelCanvas");
-var ctx = canvas.getContext("2d");
-rectangle(50, 50, "solid", "green");
+overlayXY(pupil, 56, 60,
+  overlayXY(pupil, 136, 60,
+    overlayXY(whiteCircle, 40, 50, 
+        overlayXY(whiteCircle, 120, 50, 
+            overlayXY(mouth, 65, 135,
+                overlayXY(outline, 0, 0, 
+                    overlayXY(back, 1, 1, canvas)))))));
 
-var canvas = document.getElementById("livCanvas");
-var ctx = canvas.getContext("2d");
-circle(40, "outline", "red");
+//Livs Figur SVG
+svg = document.getElementById("livSVG");
+const outlineSVG = circleSVG(100, "outline", "black")
+const backSVG = circleSVG(100, "solid", "yellow")
+const whiteCircleSVG = circleSVG(25, "solid", "white")
+const pupilSVG = circleSVG(16, "solid", "black")
+const mouthSVG = rectangleSVG(70, 5, "solid", "black")
 
-var canvas = document.getElementById("birkCanvas");
-var ctx = canvas.getContext("2d");
-circle(40, "outline", "red");
-
-var canvas = document.getElementById("siriCanvas");
-var ctx = canvas.getContext("2d");
-circle(40, "outline", "red");
-
-var canvas = document.getElementById("simenCanvas");
-var ctx = canvas.getContext("2d");
-circle(40, "outline", "red");
-
-var canvas = document.getElementById("stormCanvas");
-var ctx = canvas.getContext("2d");
-circle(40, "outline", "red");
-*/
-
-    
+overlayXYsvg(pupilSVG.cloneNode(true), 75, 80,
+  overlayXYsvg(pupilSVG, 155, 80,
+    overlayXYsvg(whiteCircleSVG.cloneNode(true), 65, 80, 
+        overlayXYsvg(whiteCircleSVG, 145, 80, 
+            overlayXYsvg(mouthSVG, 65, 140,
+                overlayXYsvg(backSVG, 105, 105, 
+                    overlayXYsvg(outlineSVG, 105, 105, svg)))))));
