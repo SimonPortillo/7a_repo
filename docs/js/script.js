@@ -110,47 +110,31 @@ function rectangle(width, height, fillmode, color) {
     return canvas;
 }
 
-
+/*
 function overlayxy(img1, x, y, img2) {
     img1.drawImage(img2, x, y);
 
+}
+*/
+
+function overlayXY(img1, x, y, img2){
+    const ctx = img2.getContext("2d");
+    ctx.drawImage(img1, x, y);
+    return img2;
 }
 
 var canvas = document.getElementById("simonCanvas");
 var ctx = canvas.getContext("2d");
 const centerX = canvas.width / 2;
 const centerY = canvas.height / 2;
-    overlayxy(ctx, centerX - 20, centerY - 20, rectangle(40, 40, "solid", "blue"));
-    overlayxy(ctx, centerX - 15, centerY - 15, rectangle(30, 30, "solid", "red"));
-    overlayxy(ctx, centerX - 10, centerY - 10, rectangle(20, 20, "solid", "black"));
-    overlayxy(ctx, centerX - 5, centerY - 5, rectangle(10, 10, "solid", "white"));
-    overlayxy(ctx, centerX - 42, centerY - 42, circle(40, "outline", "red"));
-    overlayxy(ctx, centerX -37, centerY - 37, circle(35, "outline", "blue"));
-    overlayxy(ctx, centerX - 32, centerY - 32, circle(30, "outline", "red"));
+    overlayXY(rectangle(25, 100, "solid", "black"), centerX + 38, centerY + 90, canvas);
+    overlayXY(rectangle(25, 75, "solid", "black"), centerX + 55, centerY + 190, canvas);
+    overlayXY(rectangle(25, 75, "solid", "black"), centerX + 20, centerY + 190, canvas);
+    overlayXY(rectangle(75, 25, "solid", "black"), centerX + 60, centerY + 120, canvas);
+    overlayXY(rectangle(75, 25, "solid", "black"), centerX + -30, centerY + 120, canvas);
+    overlayXY(circle(48, "solid", "yellow"), centerX, centerY, canvas);
+    overlayXY(circle(10, "solid", "black"), centerX + 20, centerY + 20, canvas);
+    overlayXY(circle(8, "solid", "black"), centerX + 50, centerY + 30, canvas);
+    overlayXY(rectangle(50, 5, "solid", "black"), centerX + 20, centerY + 70, canvas);
 
-/*
-var canvas = document.getElementById("axelCanvas");
-var ctx = canvas.getContext("2d");
-rectangle(50, 50, "solid", "green");
-
-var canvas = document.getElementById("livCanvas");
-var ctx = canvas.getContext("2d");
-circle(40, "outline", "red");
-
-var canvas = document.getElementById("birkCanvas");
-var ctx = canvas.getContext("2d");
-circle(40, "outline", "red");
-
-var canvas = document.getElementById("siriCanvas");
-var ctx = canvas.getContext("2d");
-circle(40, "outline", "red");
-
-var canvas = document.getElementById("simenCanvas");
-var ctx = canvas.getContext("2d");
-circle(40, "outline", "red");
-
-var canvas = document.getElementById("stormCanvas");
-var ctx = canvas.getContext("2d");
-circle(40, "outline", "red");
-*/
-
+    
